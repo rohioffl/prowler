@@ -1,0 +1,4321 @@
+[{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-cloudwatch_cross_account_sharing_disabled-872515266548-ap-south-1-240760692",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:role"
+    },
+    "GeneratorId": "prowler-cloudwatch_cross_account_sharing_disabled",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Logging and Monitoring"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Check if CloudWatch has allowed cross-account sharing.",
+    "Description": "CloudWatch doesn't allow cross-account sharing.",
+    "Resources": [
+        {
+            "Type": "AwsAccount",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:role",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.4.aws.iam.1",
+            "KISA-ISMS-P-2023-korean 2.5.6 2.9.4 2.9.5 2.11.3",
+            "KISA-ISMS-P-2023 2.5.6 2.9.4 2.9.5 2.11.3",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC03-BP01"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Grant usage permission on a per-resource basis to enforce least privilege and Zero Trust principles.",
+            "Url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-cloudwatch_log_group_kms_encryption_enabled-872515266548-ap-south-1-de70b07ed",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*"
+    },
+    "GeneratorId": "prowler-cloudwatch_log_group_kms_encryption_enabled",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Data Protection"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Check if CloudWatch log groups are protected by AWS KMS.",
+    "Description": "Log Group RDSOSMetrics does not have AWS KMS keys associated.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "NIST-800-53-Revision-5 au_9_3 cp_9_d sc_8_3 sc_8_4 sc_13_a sc_2",
+            "NIST-CSF-1.1 ds_1",
+            "GxP-EU-Annex-11 7.1-data-storage-damage-protection",
+            "FedRamp-Moderate-Revision-4 au-9 sc-28",
+            "NIST-800-53-Revision-4 au_9 sc_28",
+            "RBI-Cyber-Security-Framework annex_i_1_3",
+            "PCI-3.2.1 3.4 3.4.1 3.4.1.a 3.4.1.c 3.4.a 3.4.b 3.4.d 8.2 8.2.1",
+            "ISO27001-2022 A.8.11 A.8.15 A.8.16 A.8.24",
+            "NIST-800-171-Revision-2 3_3_8 3_13_11 3_13_16",
+            "KISA-ISMS-P-2023-korean 2.7.1 2.9.4 2.9.5 2.11.3",
+            "MITRE-ATTACK T1040",
+            "SOC2 cc_7_3",
+            "FedRAMP-Low-Revision-4 au-9",
+            "PCI-4.0 10.3.2.3 10.3.3.5 10.3.4.4 3.5.1.4 8.3.2.8 A1.2.1.9",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_4_ii_a 164_312_a_2_iv 164_312_",
+            "KISA-ISMS-P-2023 2.7.1 2.9.4 2.9.5 2.11.3",
+            "CISA your-systems-3 your-data-2",
+            "GxP-21-CFR-Part-11 11.30",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC08-BP02",
+            "GDPR article_32"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "GxP-EU-Annex-11"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "PCI-3.2.1"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "CISA"
+            },
+            {
+                "StandardsId": "GxP-21-CFR-Part-11"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "GDPR"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Associate KMS Key with Cloudwatch log group.",
+            "Url": "https://docs.aws.amazon.com/cli/latest/reference/logs/associate-kms-key.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-cloudwatch_log_group_no_secrets_in_logs-872515266548-ap-south-1-de70b07ed",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*"
+    },
+    "GeneratorId": "prowler-cloudwatch_log_group_no_secrets_in_logs",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Protect",
+        "Secure development"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Check if secrets exists in CloudWatch logs.",
+    "Description": "No secrets found in RDSOSMetrics log group.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ISO27001-2022 A.8.15 A.8.16",
+            "KISA-ISMS-P-2023-korean 2.7.1 2.9.4 2.9.5 2.11.2 2.11.3",
+            "MITRE-ATTACK T1552",
+            "KISA-ISMS-P-2023 2.7.1 2.9.4 2.9.5 2.11.2 2.11.3"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is recommended that sensitive information is not logged to CloudWatch logs. Alternatively, sensitive data may be masked using a protection policy",
+            "Url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-cloudwatch_log_group_not_publicly_accessible-872515266548-ap-south-1-de70b07ed",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*"
+    },
+    "GeneratorId": "prowler-cloudwatch_log_group_not_publicly_accessible",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks/AWS Security Best Practices"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure that CloudWatch Log Groups are not publicly accessible",
+    "Description": "Log Group RDSOSMetrics is not publicly accessible.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ISO27001-2022 A.8.15 A.8.16",
+            "NIS2 3.2.3.c"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure that CloudWatch Log Groups are not publicly accessible. Review and remove any resource policies that allow public access (Principal: '*') to log groups.",
+            "Url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-cloudwatch_log_group_retention_policy_specific_days_enabled-872515266548-ap-south-1-de70b07ed",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*"
+    },
+    "GeneratorId": "prowler-cloudwatch_log_group_retention_policy_specific_days_enabled",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Data Retention"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Check if CloudWatch Log Groups have a retention policy of specific days.",
+    "Description": "Log Group RDSOSMetrics has less than 365 days retention period (30 days).",
+    "Resources": [
+        {
+            "Type": "AwsLogsLogGroup",
+            "Id": "arn:aws:logs:ap-south-1:872515266548:log-group:RDSOSMetrics:*",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "NIST-800-53-Revision-5 ac_16_b au_6_3 au_6_4 au_6_6 au_6_9 au_1",
+            "FedRamp-Moderate-Revision-4 au-6-1-3 au-11 si-12",
+            "NIST-800-53-Revision-4 au_11 si_12",
+            "ENS-RD2022 op.exp.8.r3.aws.cw.1",
+            "RBI-Cyber-Security-Framework annex_i_7_4",
+            "PCI-3.2.1 10.1 10.7 10.7.b 10.7.c",
+            "ISO27001-2022 A.8.15 A.8.16",
+            "NIS2 1.1.1.h 3.2.3.c 3.2.5 4.2.2.f",
+            "NIST-800-171-Revision-2 3_3_1 3_6_1 3_6_2",
+            "KISA-ISMS-P-2023-korean 2.9.3 2.9.4 2.9.5 2.11.3",
+            "SOC2 cc_7_2 cc_7_3 cc_c_1_2",
+            "FedRAMP-Low-Revision-4 au-11",
+            "PCI-4.0 10.5.1.4 3.2.1.3 3.3.1.1.3 3.3.1.3.3 3.3.2.3 3.3.3.3 5.",
+            "ProwlerThreatScore-1.0 3.2.2",
+            "HIPAA 164_312_b",
+            "KISA-ISMS-P-2023 2.9.3 2.9.4 2.9.5 2.11.3",
+            "FFIEC d2-ma-ma-b-1",
+            "GxP-21-CFR-Part-11 11.10-c 11.10-e",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC03-BP06"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "PCI-3.2.1"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "FFIEC"
+            },
+            {
+                "StandardsId": "GxP-21-CFR-Part-11"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Add Log Retention policy of specific days to log groups. This will persist logs and traces for a long time.",
+            "Url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_Logs.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-config_recorder_all_regions_enabled-872515266548-ap-south-1-37be09f81",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:config:ap-south-1:872515266548:recorder"
+    },
+    "GeneratorId": "prowler-config_recorder_all_regions_enabled",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Logging and Monitoring"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure AWS Config is enabled in all regions.",
+    "Description": "AWS Config recorder 872515266548 is disabled.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:config:ap-south-1:872515266548:recorder",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "CIS-1.5 3.5",
+            "CIS-5.0 3.3",
+            "CIS-1.4 3.5",
+            "NIST-CSF-1.1 cm_2 am_1 ra_5 sc_4 ip_12",
+            "GxP-EU-Annex-11 10-change-and-configuration-management 4.5-vali",
+            "ENS-RD2022 op.exp.1.aws.cfg.1 op.exp.1.aws.cfg.2 op.exp.3.aws.c",
+            "PCI-3.2.1 2.4 2.4.a 10.5 10.5.2 11.5 11.5.a 11.5.b",
+            "ISO27001-2022 A.5.16 A.5.22",
+            "AWS-Account-Security-Onboarding Enable continuous recording for",
+            "CIS-4.0.1 3.3",
+            "KISA-ISMS-P-2023-korean 1.2.1 2.1.3 2.8.1 2.8.2 2.9.1 2.9.2 2.9",
+            "MITRE-ATTACK T1190 T1078 T1204 T1098 T1136 T1525 T1562 T1110 T1",
+            "SOC2 cc_2_1 cc_3_1 cc_3_4 cc_8_1",
+            "CIS-2.0 3.5",
+            "ProwlerThreatScore-1.0 3.3.1",
+            "HIPAA 164_308_a_1_ii_a",
+            "KISA-ISMS-P-2023 1.2.1 2.1.3 2.8.1 2.8.2 2.9.1 2.9.2 2.9.4 2.10",
+            "AWS-Foundational-Security-Best-Practices Config.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC04-BP02",
+            "ISO27001-2013 A.12.4"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "GxP-EU-Annex-11"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "PCI-3.2.1"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "AWS-Account-Security-Onboarding"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "ISO27001-2013"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is recommended to enable AWS Config in all regions.",
+            "Url": "https://aws.amazon.com/blogs/mt/aws-config-best-practices/"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-ec2_securitygroup_from_launch_wizard-872515266548-ap-south-1-8479c2cdc",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:ec2:ap-south-1:872515266548:security-group/sg-05eac625c3a31c5b5"
+    },
+    "GeneratorId": "prowler-ec2_securitygroup_from_launch_wizard",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Infrastructure Security"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Security Groups created by EC2 Launch Wizard.",
+    "Description": "Security group default (sg-05eac625c3a31c5b5) was not created using the EC2 Launch Wizard.",
+    "Resources": [
+        {
+            "Type": "AwsEc2SecurityGroup",
+            "Id": "arn:aws:ec2:ap-south-1:872515266548:security-group/sg-05eac625c3a31c5b5",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 mp.com.1.aws.sg.1",
+            "ISO27001-2022 A.8.20 A.8.21 A.8.22",
+            "KISA-ISMS-P-2023-korean 2.10.1",
+            "KISA-ISMS-P-2023 2.10.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC05-BP03"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Apply Zero Trust approach. Implement a process to scan and remediate security groups created by the EC2 Wizard. Recommended best practices is to use an authorized security group.",
+            "Url": "https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-ec2_securitygroup_with_many_ingress_egress_rules-872515266548-ap-south-1-8479c2cdc",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:ec2:ap-south-1:872515266548:security-group/sg-05eac625c3a31c5b5"
+    },
+    "GeneratorId": "prowler-ec2_securitygroup_with_many_ingress_egress_rules",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Infrastructure Security"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Find security groups with more than 50 ingress or egress rules.",
+    "Description": "Security group default (sg-05eac625c3a31c5b5) has 1 inbound rules and 1 outbound rules.",
+    "Resources": [
+        {
+            "Type": "AwsEc2SecurityGroup",
+            "Id": "arn:aws:ec2:ap-south-1:872515266548:security-group/sg-05eac625c3a31c5b5",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review NETSEC-001",
+            "ISO27001-2022 A.8.20 A.8.21 A.8.22",
+            "KISA-ISMS-P-2023-korean 2.6.1 2.6.2 2.10.1 2.10.3",
+            "KISA-ISMS-P-2023 2.6.1 2.6.2 2.10.1 2.10.3",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC05-BP03"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Use a Zero Trust approach. Narrow ingress traffic as much as possible. Consider north-south as well as east-west traffic.",
+            "Url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_aws_attached_policy_no_administrative_privileges-872515266548-ap-south-1-5b61806f8",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+    },
+    "GeneratorId": "prowler-iam_aws_attached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM AWS-Managed policies that allow full \"*:*\" administrative privileges are not attached",
+    "Description": "AWS policy AutoScalingServiceRolePolicy is attached but does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.16",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "CIS-5.0 1.15",
+            "CIS-1.4 1.16",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "CIS-4.0.1 1.16",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "CIS-2.0 1.16",
+            "ProwlerThreatScore-1.0 1.3.1",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_aws_attached_policy_no_administrative_privileges-872515266548-ap-south-1-f060486b4",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+    },
+    "GeneratorId": "prowler-iam_aws_attached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM AWS-Managed policies that allow full \"*:*\" administrative privileges are not attached",
+    "Description": "AWS policy AWSElasticLoadBalancingServiceRolePolicy is attached but does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.16",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "CIS-5.0 1.15",
+            "CIS-1.4 1.16",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "CIS-4.0.1 1.16",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "CIS-2.0 1.16",
+            "ProwlerThreatScore-1.0 1.3.1",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_aws_attached_policy_no_administrative_privileges-872515266548-ap-south-1-3aa16a4b9",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+    },
+    "GeneratorId": "prowler-iam_aws_attached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM AWS-Managed policies that allow full \"*:*\" administrative privileges are not attached",
+    "Description": "AWS policy AWSTrustedAdvisorServiceRolePolicy is attached but does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.16",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "CIS-5.0 1.15",
+            "CIS-1.4 1.16",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "CIS-4.0.1 1.16",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "CIS-2.0 1.16",
+            "ProwlerThreatScore-1.0 1.3.1",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_aws_attached_policy_no_administrative_privileges-872515266548-ap-south-1-607798d9f",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+    },
+    "GeneratorId": "prowler-iam_aws_attached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM AWS-Managed policies that allow full \"*:*\" administrative privileges are not attached",
+    "Description": "AWS policy AWSSupportServiceRolePolicy is attached but does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.16",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "CIS-5.0 1.15",
+            "CIS-1.4 1.16",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "CIS-4.0.1 1.16",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "CIS-2.0 1.16",
+            "ProwlerThreatScore-1.0 1.3.1",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_aws_attached_policy_no_administrative_privileges-872515266548-ap-south-1-243217b67",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+    },
+    "GeneratorId": "prowler-iam_aws_attached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM AWS-Managed policies that allow full \"*:*\" administrative privileges are not attached",
+    "Description": "AWS policy ReadOnlyAccess is attached but does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.16",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "CIS-5.0 1.15",
+            "CIS-1.4 1.16",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "CIS-4.0.1 1.16",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "CIS-2.0 1.16",
+            "ProwlerThreatScore-1.0 1.3.1",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_aws_attached_policy_no_administrative_privileges-872515266548-ap-south-1-afec7f938",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/aws-service-role/NetworkSecurityDirectorServiceLinkedRolePolicy"
+    },
+    "GeneratorId": "prowler-iam_aws_attached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM AWS-Managed policies that allow full \"*:*\" administrative privileges are not attached",
+    "Description": "AWS policy NetworkSecurityDirectorServiceLinkedRolePolicy is attached but does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/aws-service-role/NetworkSecurityDirectorServiceLinkedRolePolicy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.16",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "CIS-5.0 1.15",
+            "CIS-1.4 1.16",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "CIS-4.0.1 1.16",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "CIS-2.0 1.16",
+            "ProwlerThreatScore-1.0 1.3.1",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_aws_attached_policy_no_administrative_privileges-872515266548-ap-south-1-d3d2865f5",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy"
+    },
+    "GeneratorId": "prowler-iam_aws_attached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM AWS-Managed policies that allow full \"*:*\" administrative privileges are not attached",
+    "Description": "AWS policy ServiceQuotasServiceRolePolicy is attached but does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.16",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "CIS-5.0 1.15",
+            "CIS-1.4 1.16",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "CIS-4.0.1 1.16",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "CIS-2.0 1.16",
+            "ProwlerThreatScore-1.0 1.3.1",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_check_saml_providers_sts-872515266548-ap-south-1-ac87f015c",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:root"
+    },
+    "GeneratorId": "prowler-iam_check_saml_providers_sts",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "LOW"
+    },
+    "Title": "Check if there are SAML Providers then STS can be used",
+    "Description": "No SAML Providers found.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam::872515266548:root",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.21",
+            "CIS-5.0 1.20",
+            "CIS-1.4 1.21",
+            "ENS-RD2022 op.acc.1.aws.iam.2",
+            "CIS-4.0.1 1.21",
+            "KISA-ISMS-P-2023-korean 2.5.3",
+            "CIS-2.0 1.21",
+            "ProwlerThreatScore-1.0 1.2.7",
+            "KISA-ISMS-P-2023 2.5.3",
+            "CIS-3.0 1.21"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "CIS-3.0"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Enable SAML provider and use temporary credentials. You can use temporary security credentials to make programmatic requests for AWS resources using the AWS CLI or AWS API (using the AWS SDKs ). The temporary credentials provide the same permissions that you have with use long-term security credentials such as IAM user credentials. In case of not having SAML provider capabilities prevent usage of long-lived credentials.",
+            "Url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_customer_unattached_policy_no_administrative_privileges-872515266548-ap-south-1-32990bb2f",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612"
+    },
+    "GeneratorId": "prowler-iam_customer_unattached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "LOW"
+    },
+    "Title": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not created",
+    "Description": "Custom policy AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612 is unattached and does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.8.r4.aws.ct.1",
+            "ISO27001-2022 A.8.2",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078",
+            "KISA-ISMS-P-2023 2.5.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC03-BP02 SEC03"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_customer_unattached_policy_no_administrative_privileges-872515266548-ap-south-1-202e4eb69",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5"
+    },
+    "GeneratorId": "prowler-iam_customer_unattached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "LOW"
+    },
+    "Title": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not created",
+    "Description": "Custom policy AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5 is unattached and does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.8.r4.aws.ct.1",
+            "ISO27001-2022 A.8.2",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078",
+            "KISA-ISMS-P-2023 2.5.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC03-BP02 SEC03"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_customer_unattached_policy_no_administrative_privileges-872515266548-ap-south-1-b00b74a60",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/Tag_name_change"
+    },
+    "GeneratorId": "prowler-iam_customer_unattached_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "LOW"
+    },
+    "Title": "Ensure IAM policies that allow full \"*:*\" administrative privileges are not created",
+    "Description": "Custom policy Tag_name_change is unattached and does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/Tag_name_change",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.8.r4.aws.ct.1",
+            "ISO27001-2022 A.8.2",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078",
+            "KISA-ISMS-P-2023 2.5.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC03-BP02 SEC03"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_inline_policy_allows_privilege_escalation-872515266548-ap-south-1-e28f409f3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/ExternalAuditRole"
+    },
+    "GeneratorId": "prowler-iam_inline_policy_allows_privilege_escalation",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure no IAM Inline policies allow actions that may lead into Privilege Escalation",
+    "Description": "Inline policy AuditPolicy attached to role ExternalAuditRole does not allow privilege escalation.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:role/ExternalAuditRole",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "SOC2 cc_3_3",
+            "ProwlerThreatScore-1.0 1.3.3",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Grant usage permission on a per-resource basis and applying least privilege principle.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_inline_policy_no_administrative_privileges-872515266548-ap-south-1-e28f409f3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/ExternalAuditRole"
+    },
+    "GeneratorId": "prowler-iam_inline_policy_no_administrative_privileges",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM inline policies that allow full \"*:*\" administrative privileges are not associated to IAM identities",
+    "Description": "Inline policy AuditPolicy attached to role ExternalAuditRole does not allow '*:*' administrative privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:role/ExternalAuditRole",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_6 ac_2_i_2 ac_3 ac_3_3 ac_3_",
+            "NIST-CSF-1.1 ac_1 ac_4 pt_3",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-3 ac-5-c ac",
+            "NIST-800-53-Revision-4 ac_2 ac_3 ac_5 ac_6 sc_2",
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.acc.4.aws.i",
+            "RBI-Cyber-Security-Framework annex_i_7_1",
+            "ISO27001-2022 A.5.18 A.8.2",
+            "NIS2 6.7.2.e 11.3.2.c 11.4.2.b",
+            "NIST-800-171-Revision-2 3_1_1 3_1_2 3_1_4 3_1_5 3_1_6 3_1_7 3_4",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1040 T1580 T1538 T1",
+            "SOC2 cc_1_3 cc_6_3",
+            "FedRAMP-Low-Revision-4 ac-2 ac-3",
+            "HIPAA 164_308_a_1_ii_b 164_308_a_3_i 164_308_a_3_ii_b 164_308_a",
+            "KISA-ISMS-P-2023 2.5.1",
+            "FFIEC d3-pc-am-b-1 d3-pc-am-b-16 d3-pc-am-b-2 d3-pc-am-b-3 d3-p",
+            "CISA your-systems-3 your-surroundings-3",
+            "AWS-Foundational-Security-Best-Practices IAM.1",
+            "GxP-21-CFR-Part-11 11.10-d 11.10-g",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC03-BP02"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "FFIEC"
+            },
+            {
+                "StandardsId": "CISA"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            },
+            {
+                "StandardsId": "GxP-21-CFR-Part-11"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_inline_policy_no_full_access_to_cloudtrail-872515266548-ap-south-1-e28f409f3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/ExternalAuditRole"
+    },
+    "GeneratorId": "prowler-iam_inline_policy_no_full_access_to_cloudtrail",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM inline policies that allow full \"cloudtrail:*\" privileges are not created",
+    "Description": "Inline policy AuditPolicy attached to role ExternalAuditRole does not allow 'cloudtrail:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:role/ExternalAuditRole",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "KISA-ISMS-P-2023-korean 2.5.1 2.9.4",
+            "KISA-ISMS-P-2023 2.5.1 2.9.4"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_inline_policy_no_full_access_to_kms-872515266548-ap-south-1-e28f409f3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/ExternalAuditRole"
+    },
+    "GeneratorId": "prowler-iam_inline_policy_no_full_access_to_kms",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM inline policies that allow full \"kms:*\" privileges are not created",
+    "Description": "Inline policy AuditPolicy attached to role ExternalAuditRole does not allow 'kms:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:role/ExternalAuditRole",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "PCI-4.0 3.5.1.1.8 3.5.1.3.16 3.6.1.2.8 3.6.1.3.8 3.6.1.4.8 3.6.",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_no_custom_policy_permissive_role_assumption-872515266548-ap-south-1-32990bb2f",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612"
+    },
+    "GeneratorId": "prowler-iam_no_custom_policy_permissive_role_assumption",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure that no custom IAM policies exist which allow permissive role assumption (e.g. sts:AssumeRole on *)",
+    "Description": "Custom Policy AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612 does not allow permissive STS Role assumption.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.exp.8.r4.aw",
+            "AWS-Account-Security-Onboarding Predefine IAM Roles",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1098 T1606 T1040 T1580",
+            "KISA-ISMS-P-2023 2.5.1",
+            "CISA your-systems-3 your-surroundings-3"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "AWS-Account-Security-Onboarding"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "CISA"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Use the least privilege principle when granting permissions.",
+            "Url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_no_custom_policy_permissive_role_assumption-872515266548-ap-south-1-202e4eb69",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5"
+    },
+    "GeneratorId": "prowler-iam_no_custom_policy_permissive_role_assumption",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure that no custom IAM policies exist which allow permissive role assumption (e.g. sts:AssumeRole on *)",
+    "Description": "Custom Policy AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5 does not allow permissive STS Role assumption.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.exp.8.r4.aw",
+            "AWS-Account-Security-Onboarding Predefine IAM Roles",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1098 T1606 T1040 T1580",
+            "KISA-ISMS-P-2023 2.5.1",
+            "CISA your-systems-3 your-surroundings-3"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "AWS-Account-Security-Onboarding"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "CISA"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Use the least privilege principle when granting permissions.",
+            "Url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_no_custom_policy_permissive_role_assumption-872515266548-ap-south-1-b00b74a60",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/Tag_name_change"
+    },
+    "GeneratorId": "prowler-iam_no_custom_policy_permissive_role_assumption",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure that no custom IAM policies exist which allow permissive role assumption (e.g. sts:AssumeRole on *)",
+    "Description": "Custom Policy Tag_name_change does not allow permissive STS Role assumption.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/Tag_name_change",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.exp.8.r4.aw",
+            "AWS-Account-Security-Onboarding Predefine IAM Roles",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1098 T1606 T1040 T1580",
+            "KISA-ISMS-P-2023 2.5.1",
+            "CISA your-systems-3 your-surroundings-3"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "AWS-Account-Security-Onboarding"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "CISA"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Use the least privilege principle when granting permissions.",
+            "Url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_password_policy_expires_passwords_within_90_days_or_less-872515266548-ap-south-1-fe16276a3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:password-policy"
+    },
+    "GeneratorId": "prowler-iam_password_policy_expires_passwords_within_90_days_or_less",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM password policy expires passwords within 90 days or less",
+    "Description": "Password expiration is not set.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:password-policy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-003",
+            "ENS-RD2022 op.acc.6.aws.iam.3",
+            "ISO27001-2022 A.5.15",
+            "NIS2 1.1.1.d 1.1.2 9.2.c.v 11.6.2.a",
+            "NIST-800-171-Revision-2 3_5_5 3_5_6 3_5_7 3_5_8",
+            "KISA-ISMS-P-2023-korean 2.5.4",
+            "MITRE-ATTACK T1078 T1110",
+            "PCI-4.0 8.3.6.1 8.6.3.2",
+            "ProwlerThreatScore-1.0 1.1.12",
+            "KISA-ISMS-P-2023 2.5.4",
+            "AWS-Foundational-Security-Best-Practices IAM.7 IAM.10",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC03-BP06",
+            "ISO27001-2013 A.9.2 A.9.3 A.9.4"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "ISO27001-2013"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure Password expiration period (in days): is set to 90 or less.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_password_policy_lowercase-872515266548-ap-south-1-fe16276a3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:password-policy"
+    },
+    "GeneratorId": "prowler-iam_password_policy_lowercase",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM password policy require at least one lowercase letter",
+    "Description": "IAM password policy does not require at least one lowercase letter.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:password-policy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-003",
+            "ENS-RD2022 op.acc.6.r1.aws.iam.1",
+            "ISO27001-2022 A.5.15",
+            "NIS2 9.2.c.v 11.6.2.a",
+            "NIST-800-171-Revision-2 3_5_7",
+            "KISA-ISMS-P-2023-korean 2.5.4",
+            "MITRE-ATTACK T1078 T1110",
+            "ProwlerThreatScore-1.0 1.1.8",
+            "HIPAA 164_308_a_5_ii_d",
+            "KISA-ISMS-P-2023 2.5.4",
+            "FFIEC d3-pc-am-b-6 d3-pc-am-b-7",
+            "CISA your-systems-3 your-surroundings-4",
+            "AWS-Foundational-Security-Best-Practices IAM.7 IAM.10",
+            "GxP-21-CFR-Part-11 11.10-d 11.10-g 11.200 11.300-b",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC02-BP01",
+            "ISO27001-2013 A.9.2 A.9.3 A.9.4",
+            "GDPR article_25"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "FFIEC"
+            },
+            {
+                "StandardsId": "CISA"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            },
+            {
+                "StandardsId": "GxP-21-CFR-Part-11"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "ISO27001-2013"
+            },
+            {
+                "StandardsId": "GDPR"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure \"Requires at least one lowercase letter\" is checked under \"Password Policy\".",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_password_policy_minimum_length_14-872515266548-ap-south-1-fe16276a3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:password-policy"
+    },
+    "GeneratorId": "prowler-iam_password_policy_minimum_length_14",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM password policy requires minimum length of 14 or greater",
+    "Description": "IAM password policy does not require minimum length of 14 characters.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:password-policy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.8",
+            "NIST-800-53-Revision-5 ac_2_1 ac_2_3_a ac_2_3_b ac_2_3_c ac_2_3",
+            "CIS-5.0 1.7",
+            "CIS-1.4 1.8",
+            "AWS-Foundational-Technical-Review IAM-003",
+            "FedRamp-Moderate-Revision-4 ac-2-1 ac-2-f ac-2-j ac-2-3 ac-5-c ",
+            "ENS-RD2022 op.acc.6.r1.aws.iam.1",
+            "ISO27001-2022 A.5.15",
+            "NIS2 9.2.c.v",
+            "CIS-4.0.1 1.8",
+            "NIST-800-171-Revision-2 3_5_7",
+            "KISA-ISMS-P-2023-korean 2.5.4",
+            "MITRE-ATTACK T1078 T1110",
+            "FedRAMP-Low-Revision-4 ac-2 ia-2",
+            "CIS-2.0 1.8",
+            "ProwlerThreatScore-1.0 1.1.4",
+            "HIPAA 164_308_a_5_ii_d",
+            "KISA-ISMS-P-2023 2.5.4",
+            "FFIEC d3-pc-am-b-6 d3-pc-am-b-7",
+            "CISA your-systems-3 your-surroundings-4"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "FedRamp-Moderate-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "FedRAMP-Low-Revision-4"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "FFIEC"
+            },
+            {
+                "StandardsId": "CISA"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure \"Minimum password length\" is checked under \"Password Policy\".",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_password_policy_number-872515266548-ap-south-1-fe16276a3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:password-policy"
+    },
+    "GeneratorId": "prowler-iam_password_policy_number",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM password policy require at least one number",
+    "Description": "IAM password policy does not require at least one number.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:password-policy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-003",
+            "ENS-RD2022 op.acc.6.r1.aws.iam.1",
+            "ISO27001-2022 A.5.15",
+            "NIS2 9.2.c.v",
+            "NIST-800-171-Revision-2 3_5_7",
+            "KISA-ISMS-P-2023-korean 2.5.4",
+            "MITRE-ATTACK T1078 T1110",
+            "ProwlerThreatScore-1.0 1.1.6",
+            "HIPAA 164_308_a_5_ii_d",
+            "KISA-ISMS-P-2023 2.5.4",
+            "FFIEC d3-pc-am-b-6 d3-pc-am-b-7",
+            "CISA your-systems-3 your-surroundings-4",
+            "AWS-Foundational-Security-Best-Practices IAM.7 IAM.10",
+            "GxP-21-CFR-Part-11 11.10-d 11.10-g 11.200 11.300-b",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC02-BP01",
+            "ISO27001-2013 A.9.2 A.9.3 A.9.4",
+            "GDPR article_25"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "FFIEC"
+            },
+            {
+                "StandardsId": "CISA"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            },
+            {
+                "StandardsId": "GxP-21-CFR-Part-11"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "ISO27001-2013"
+            },
+            {
+                "StandardsId": "GDPR"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure \"Require at least one number\" is checked under \"Password Policy\".",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_password_policy_reuse_24-872515266548-ap-south-1-fe16276a3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:password-policy"
+    },
+    "GeneratorId": "prowler-iam_password_policy_reuse_24",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM password policy prevents password reuse: 24 or greater",
+    "Description": "IAM password policy reuse prevention is less than 24 or not set.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:password-policy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.9",
+            "CIS-5.0 1.8",
+            "CIS-1.4 1.9",
+            "NIST-CSF-1.1 ac_1",
+            "AWS-Foundational-Technical-Review IAM-003",
+            "NIST-800-53-Revision-4 ac_2_1 ac_2 ia_2 ia_5_1 ia_5_4",
+            "ENS-RD2022 op.acc.6.r1.aws.iam.1",
+            "RBI-Cyber-Security-Framework annex_i_7_2",
+            "PCI-3.2.1 8.1 8.1.4 8.2 8.2.3 8.2.3.a 8.2.3.b 8.2.4 8.2.4.a 8.2",
+            "ISO27001-2022 A.5.15",
+            "NIS2 9.2.c.v",
+            "CIS-4.0.1 1.9",
+            "NIST-800-171-Revision-2 3_5_5 3_5_6 3_5_7 3_5_8",
+            "KISA-ISMS-P-2023-korean 2.5.4",
+            "MITRE-ATTACK T1078 T1110",
+            "CIS-2.0 1.9",
+            "ProwlerThreatScore-1.0 1.1.5",
+            "HIPAA 164_308_a_4_ii_c 164_308_a_5_ii_d 164_312_d",
+            "KISA-ISMS-P-2023 2.5.4",
+            "AWS-Foundational-Security-Best-Practices IAM.7 IAM.10"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "NIST-CSF-1.1"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "NIST-800-53-Revision-4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "RBI-Cyber-Security-Framework"
+            },
+            {
+                "StandardsId": "PCI-3.2.1"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure \"Number of passwords to remember\" is set to 24.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_password_policy_symbol-872515266548-ap-south-1-fe16276a3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:password-policy"
+    },
+    "GeneratorId": "prowler-iam_password_policy_symbol",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM password policy require at least one symbol",
+    "Description": "IAM password policy does not require at least one symbol.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:password-policy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-003",
+            "ENS-RD2022 op.acc.6.r1.aws.iam.1",
+            "ISO27001-2022 A.5.15",
+            "NIS2 9.2.c.v",
+            "NIST-800-171-Revision-2 3_5_7",
+            "KISA-ISMS-P-2023-korean 2.5.4",
+            "MITRE-ATTACK T1078 T1110",
+            "ProwlerThreatScore-1.0 1.1.7",
+            "HIPAA 164_308_a_5_ii_d",
+            "KISA-ISMS-P-2023 2.5.4",
+            "FFIEC d3-pc-am-b-6 d3-pc-am-b-7",
+            "CISA your-systems-3 your-surroundings-4",
+            "AWS-Foundational-Security-Best-Practices IAM.7 IAM.10",
+            "GxP-21-CFR-Part-11 11.10-d 11.10-g 11.200 11.300-b",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC02-BP01",
+            "ISO27001-2013 A.9.2 A.9.3 A.9.4",
+            "GDPR article_25"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "FFIEC"
+            },
+            {
+                "StandardsId": "CISA"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            },
+            {
+                "StandardsId": "GxP-21-CFR-Part-11"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "ISO27001-2013"
+            },
+            {
+                "StandardsId": "GDPR"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure \"Require at least one non-alphanumeric character\" is checked under \"Password Policy\".",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_password_policy_uppercase-872515266548-ap-south-1-fe16276a3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam:ap-south-1:872515266548:password-policy"
+    },
+    "GeneratorId": "prowler-iam_password_policy_uppercase",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM password policy requires at least one uppercase letter",
+    "Description": "IAM password policy does not require at least one uppercase letter.",
+    "Resources": [
+        {
+            "Type": "Other",
+            "Id": "arn:aws:iam:ap-south-1:872515266548:password-policy",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-003",
+            "ENS-RD2022 op.acc.6.r1.aws.iam.1",
+            "ISO27001-2022 A.5.15",
+            "NIS2 9.2.c.v",
+            "NIST-800-171-Revision-2 3_5_7",
+            "KISA-ISMS-P-2023-korean 2.5.4",
+            "MITRE-ATTACK T1078 T1110",
+            "ProwlerThreatScore-1.0 1.1.9",
+            "HIPAA 164_308_a_5_ii_d",
+            "KISA-ISMS-P-2023 2.5.4",
+            "FFIEC d3-pc-am-b-6 d3-pc-am-b-7",
+            "CISA your-systems-3 your-surroundings-4",
+            "AWS-Foundational-Security-Best-Practices IAM.7 IAM.10",
+            "GxP-21-CFR-Part-11 11.10-d 11.10-g 11.200 11.300-b",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC02-BP01",
+            "ISO27001-2013 A.9.2 A.9.3 A.9.4",
+            "GDPR article_25"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "NIST-800-171-Revision-2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "HIPAA"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "FFIEC"
+            },
+            {
+                "StandardsId": "CISA"
+            },
+            {
+                "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            },
+            {
+                "StandardsId": "GxP-21-CFR-Part-11"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "ISO27001-2013"
+            },
+            {
+                "StandardsId": "GDPR"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure \"Requires at least one uppercase letter\" is checked under \"Password Policy\".",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_allows_privilege_escalation-872515266548-ap-south-1-32990bb2f",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612"
+    },
+    "GeneratorId": "prowler-iam_policy_allows_privilege_escalation",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure no Customer Managed IAM policies allow actions that may lead into Privilege Escalation",
+    "Description": "Custom Policy arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612 does not allow privilege escalation.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.exp.8.r4.aw",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1606 T1040 T1580 T1",
+            "KISA-ISMS-P-2023 2.5.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC02-BP06"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Grant usage permission on a per-resource basis and applying least privilege principle.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_allows_privilege_escalation-872515266548-ap-south-1-202e4eb69",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5"
+    },
+    "GeneratorId": "prowler-iam_policy_allows_privilege_escalation",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure no Customer Managed IAM policies allow actions that may lead into Privilege Escalation",
+    "Description": "Custom Policy arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5 does not allow privilege escalation.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.exp.8.r4.aw",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1606 T1040 T1580 T1",
+            "KISA-ISMS-P-2023 2.5.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC02-BP06"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Grant usage permission on a per-resource basis and applying least privilege principle.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_allows_privilege_escalation-872515266548-ap-south-1-b00b74a60",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/Tag_name_change"
+    },
+    "GeneratorId": "prowler-iam_policy_allows_privilege_escalation",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure no Customer Managed IAM policies allow actions that may lead into Privilege Escalation",
+    "Description": "Custom Policy arn:aws:iam::872515266548:policy/Tag_name_change does not allow privilege escalation.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/Tag_name_change",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.4.aws.iam.1 op.acc.4.aws.iam.2 op.exp.8.r4.aw",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1606 T1040 T1580 T1",
+            "KISA-ISMS-P-2023 2.5.1",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC02-BP06"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Grant usage permission on a per-resource basis and applying least privilege principle.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_cloudshell_admin_not_attached-872515266548-ap-south-1-b96d300e3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/AWSCloudShellFullAccess"
+    },
+    "GeneratorId": "prowler-iam_policy_cloudshell_admin_not_attached",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks/AWS Security Best Practices/CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Check if IAM identities (users,groups,roles) have the AWSCloudShellFullAccess policy attached.",
+    "Description": "AWS CloudShellFullAccess policy is not attached to any IAM entity.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::aws:policy/AWSCloudShellFullAccess",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "CIS-5.0 1.21",
+            "NIS2 1.2.1",
+            "CIS-4.0.1 1.22",
+            "PCI-4.0 7.2.1.14 7.2.1.15 7.2.1.16 7.2.2.14 7.2.2.15 7.2.2.16 7",
+            "CIS-2.0 1.22",
+            "ProwlerThreatScore-1.0 1.3.2"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Detach the AWSCloudShellFullAccess policy from the IAM identity to restrict excessive permissions and adhere to the principle of least privilege.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_no_full_access_to_cloudtrail-872515266548-ap-south-1-32990bb2f",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612"
+    },
+    "GeneratorId": "prowler-iam_policy_no_full_access_to_cloudtrail",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM policies that allow full \"cloudtrail:*\" privileges are not created",
+    "Description": "Custom Policy AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612 does not allow 'cloudtrail:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.8.r4.aws.ct.1",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1580",
+            "SOC2 cc_3_3",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_no_full_access_to_cloudtrail-872515266548-ap-south-1-202e4eb69",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5"
+    },
+    "GeneratorId": "prowler-iam_policy_no_full_access_to_cloudtrail",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM policies that allow full \"cloudtrail:*\" privileges are not created",
+    "Description": "Custom Policy AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5 does not allow 'cloudtrail:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.8.r4.aws.ct.1",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1580",
+            "SOC2 cc_3_3",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_no_full_access_to_cloudtrail-872515266548-ap-south-1-b00b74a60",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/Tag_name_change"
+    },
+    "GeneratorId": "prowler-iam_policy_no_full_access_to_cloudtrail",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM policies that allow full \"cloudtrail:*\" privileges are not created",
+    "Description": "Custom Policy Tag_name_change does not allow 'cloudtrail:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/Tag_name_change",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.8.r4.aws.ct.1",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1580",
+            "SOC2 cc_3_3",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "SOC2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_no_full_access_to_kms-872515266548-ap-south-1-32990bb2f",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612"
+    },
+    "GeneratorId": "prowler-iam_policy_no_full_access_to_kms",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM policies that allow full \"kms:*\" privileges are not created",
+    "Description": "Custom Policy AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612 does not allow 'kms:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-980aee1f-cad0-4702-9e23-022fdea37612",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.10.aws.cmk.1 op.exp.10.aws.cmk.2",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1580",
+            "PCI-4.0 3.5.1.1.7 3.5.1.3.15 3.6.1.2.7 3.6.1.3.7 3.6.1.4.7 3.6.",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_no_full_access_to_kms-872515266548-ap-south-1-202e4eb69",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5"
+    },
+    "GeneratorId": "prowler-iam_policy_no_full_access_to_kms",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM policies that allow full \"kms:*\" privileges are not created",
+    "Description": "Custom Policy AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5 does not allow 'kms:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/service-role/AWSLambdaBasicExecutionRole-e8a6dfe2-8cb3-4016-9b64-7c9cc6085fb5",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.10.aws.cmk.1 op.exp.10.aws.cmk.2",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1580",
+            "PCI-4.0 3.5.1.1.7 3.5.1.3.15 3.6.1.2.7 3.6.1.3.7 3.6.1.4.7 3.6.",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_policy_no_full_access_to_kms-872515266548-ap-south-1-b00b74a60",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:policy/Tag_name_change"
+    },
+    "GeneratorId": "prowler-iam_policy_no_full_access_to_kms",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure IAM policies that allow full \"kms:*\" privileges are not created",
+    "Description": "Custom Policy Tag_name_change does not allow 'kms:*' privileges.",
+    "Resources": [
+        {
+            "Type": "AwsIamPolicy",
+            "Id": "arn:aws:iam::872515266548:policy/Tag_name_change",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.exp.10.aws.cmk.1 op.exp.10.aws.cmk.2",
+            "NIS2 11.2.2.a",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078 T1648 T1098 T1578 T1550 T1580",
+            "PCI-4.0 3.5.1.1.7 3.5.1.3.15 3.6.1.2.7 3.6.1.3.7 3.6.1.4.7 3.6.",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "PCI-4.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "It is more secure to start with a minimum set of permissions and grant additional permissions as necessary, rather than starting with permissions that are too lenient and then trying to tighten them later. List policies an analyze if permissions are the least possible to conduct business activities.",
+            "Url": "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_role_administratoraccess_policy-872515266548-ap-south-1-e28f409f3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/ExternalAuditRole"
+    },
+    "GeneratorId": "prowler-iam_role_administratoraccess_policy",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM Roles do not have AdministratorAccess policy attached",
+    "Description": "IAM Role ExternalAuditRole does not have AdministratorAccess policy.",
+    "Resources": [
+        {
+            "Type": "AwsIamRole",
+            "Id": "arn:aws:iam::872515266548:role/ExternalAuditRole",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-0012",
+            "NIS2 1.2.1 11.3.1",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Apply the principle of least privilege. Instead of AdministratorAccess, assign only the permissions necessary for specific roles and tasks. Create custom IAM policies with minimal permissions based on the principle of least privilege.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_role_administratoraccess_policy-872515266548-ap-south-1-9e34bfdbf",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/gautham-act-role"
+    },
+    "GeneratorId": "prowler-iam_role_administratoraccess_policy",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM Roles do not have AdministratorAccess policy attached",
+    "Description": "IAM Role gautham-act-role does not have AdministratorAccess policy.",
+    "Resources": [
+        {
+            "Type": "AwsIamRole",
+            "Id": "arn:aws:iam::872515266548:role/gautham-act-role",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-0012",
+            "NIS2 1.2.1 11.3.1",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Apply the principle of least privilege. Instead of AdministratorAccess, assign only the permissions necessary for specific roles and tasks. Create custom IAM policies with minimal permissions based on the principle of least privilege.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_role_cross_account_readonlyaccess_policy-872515266548-ap-south-1-e28f409f3",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/ExternalAuditRole"
+    },
+    "GeneratorId": "prowler-iam_role_cross_account_readonlyaccess_policy",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM Roles do not have ReadOnlyAccess access for external AWS accounts",
+    "Description": "IAM Role ExternalAuditRole does not have ReadOnlyAccess policy.",
+    "Resources": [
+        {
+            "Type": "AwsIamRole",
+            "Id": "arn:aws:iam::872515266548:role/ExternalAuditRole",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-0012",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Remove the AWS-managed ReadOnlyAccess policy from all roles that have a trust policy, including third-party cloud accounts, or remove third-party cloud accounts from the trust policy of all roles that need the ReadOnlyAccess policy.",
+            "Url": "https://docs.securestate.vmware.com/rule-docs/aws-iam-role-cross-account-readonlyaccess-policy"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_role_cross_account_readonlyaccess_policy-872515266548-ap-south-1-9e34bfdbf",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::872515266548:role/gautham-act-role"
+    },
+    "GeneratorId": "prowler-iam_role_cross_account_readonlyaccess_policy",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "HIGH"
+    },
+    "Title": "Ensure IAM Roles do not have ReadOnlyAccess access for external AWS accounts",
+    "Description": "IAM Role gautham-act-role has read-only access but is not cross account.",
+    "Resources": [
+        {
+            "Type": "AwsIamRole",
+            "Id": "arn:aws:iam::872515266548:role/gautham-act-role",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "PASSED",
+        "RelatedRequirements": [
+            "AWS-Foundational-Technical-Review IAM-0012",
+            "KISA-ISMS-P-2023-korean 2.5.1",
+            "MITRE-ATTACK T1078",
+            "KISA-ISMS-P-2023 2.5.1"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "AWS-Foundational-Technical-Review"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "MITRE-ATTACK"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Remove the AWS-managed ReadOnlyAccess policy from all roles that have a trust policy, including third-party cloud accounts, or remove third-party cloud accounts from the trust policy of all roles that need the ReadOnlyAccess policy.",
+            "Url": "https://docs.securestate.vmware.com/rule-docs/aws-iam-role-cross-account-readonlyaccess-policy"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_securityaudit_role_created-872515266548-ap-south-1-80bbe2230",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/SecurityAudit"
+    },
+    "GeneratorId": "prowler-iam_securityaudit_role_created",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "LOW"
+    },
+    "Title": "Ensure a Security Audit role has been created to conduct security audits",
+    "Description": "SecurityAudit policy is not attached to any role.",
+    "Resources": [
+        {
+            "Type": "AwsIamRole",
+            "Id": "arn:aws:iam::aws:policy/SecurityAudit",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "ENS-RD2022 op.acc.3.r2.aws.iam.1",
+            "ISO27001-2022 A.5.3",
+            "NIS2 1.2.4 2.1.1 2.1.2.a 2.1.2.e 2.1.2.f 2.2.1 2.3.1 3.1.2.c 3.",
+            "KISA-ISMS-P-2023-korean 2.5.1 2.9.4",
+            "KISA-ISMS-P-2023 2.5.1 2.9.4"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Create an IAM role for conduct security audits with AWS.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html#jf_security-auditor"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-iam_support_role_created-872515266548-ap-south-1-ce474db79",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:iam::aws:policy/AWSSupportAccess"
+    },
+    "GeneratorId": "prowler-iam_support_role_created",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Software and Configuration Checks",
+        "Industry and Regulatory Standards",
+        "CIS AWS Foundations Benchmark"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure a support role has been created to manage incidents with AWS Support",
+    "Description": "AWS Support Access policy is not attached to any role.",
+    "Resources": [
+        {
+            "Type": "AwsIamRole",
+            "Id": "arn:aws:iam::aws:policy/AWSSupportAccess",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "CIS-1.5 1.17",
+            "CIS-5.0 1.16",
+            "CIS-1.4 1.17",
+            "ENS-RD2022 op.acc.3.r1.aws.iam.1",
+            "NIS2 2.1.1 2.1.2.a 2.2.1 3.1.2.d 4.3.2.a 5.1.7.b",
+            "AWS-Account-Security-Onboarding Predefine IAM Roles",
+            "CIS-4.0.1 1.17",
+            "KISA-ISMS-P-2023-korean 2.2.1 2.5.5",
+            "CIS-2.0 1.17",
+            "ProwlerThreatScore-1.0 1.2.3",
+            "KISA-ISMS-P-2023 2.2.1 2.5.5",
+            "AWS-Well-Architected-Framework-Security-Pillar SEC10-BP01",
+            "GDPR article_25",
+            "CIS-3.0 1.17"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "CIS-1.5"
+            },
+            {
+                "StandardsId": "CIS-5.0"
+            },
+            {
+                "StandardsId": "CIS-1.4"
+            },
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "NIS2"
+            },
+            {
+                "StandardsId": "AWS-Account-Security-Onboarding"
+            },
+            {
+                "StandardsId": "CIS-4.0.1"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "CIS-2.0"
+            },
+            {
+                "StandardsId": "ProwlerThreatScore-1.0"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            },
+            {
+                "StandardsId": "AWS-Well-Architected-Framework-Security-Pillar"
+            },
+            {
+                "StandardsId": "GDPR"
+            },
+            {
+                "StandardsId": "CIS-3.0"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Create an IAM role for managing incidents with AWS.",
+            "Url": "https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html"
+        }
+    }
+},{
+    "SchemaVersion": "2018-10-08",
+    "Id": "prowler-vpc_different_regions-872515266548-ap-south-1-67b47974d",
+    "ProductArn": "arn:aws:securityhub:ap-south-1::product/prowler/prowler",
+    "RecordState": "ACTIVE",
+    "ProductFields": {
+        "ProviderName": "Prowler",
+        "ProviderVersion": "5.9.0",
+        "ProwlerResourceName": "arn:aws:ec2:ap-south-1:872515266548:vpc"
+    },
+    "GeneratorId": "prowler-vpc_different_regions",
+    "AwsAccountId": "872515266548",
+    "Types": [
+        "Infrastructure Security"
+    ],
+    "FirstObservedAt": "2025-07-18T12:41:38Z",
+    "UpdatedAt": "2025-07-18T12:41:38Z",
+    "CreatedAt": "2025-07-18T12:41:38Z",
+    "Severity": {
+        "Label": "MEDIUM"
+    },
+    "Title": "Ensure there are VPCs in more than one region",
+    "Description": "VPCs found only in one region.",
+    "Resources": [
+        {
+            "Type": "AwsEc2Vpc",
+            "Id": "arn:aws:ec2:ap-south-1:872515266548:vpc",
+            "Partition": "aws",
+            "Region": "ap-south-1"
+        }
+    ],
+    "Compliance": {
+        "Status": "FAILED",
+        "RelatedRequirements": [
+            "ENS-RD2022 mp.com.4.r1.aws.vpc.1 mp.com.4.r3.aws.vpc.1",
+            "ISO27001-2022 A.8.20 A.8.21 A.8.22",
+            "KISA-ISMS-P-2023-korean 2.12.1 2.12.2",
+            "KISA-ISMS-P-2023 2.12.1 2.12.2"
+        ],
+        "AssociatedStandards": [
+            {
+                "StandardsId": "ENS-RD2022"
+            },
+            {
+                "StandardsId": "ISO27001-2022"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023-korean"
+            },
+            {
+                "StandardsId": "KISA-ISMS-P-2023"
+            }
+        ]
+    },
+    "Remediation": {
+        "Recommendation": {
+            "Text": "Ensure there are VPCs in more than one region",
+            "Url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-example-private-subnets-nat.html"
+        }
+    }
+}]

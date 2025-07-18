@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  IAM Role for external security audit using Prowler or similar tools.
+  Assumable by an external AWS account.
+
+Parameters:
+  ExternalAuditAccountId:
+    Type: String
+    Description: The AWS Account ID that will assume this role (e.g., your audit account)
+
+Resources:
+  ExternalAuditRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      # Avoid hardcoding RoleName to prevent deletion/update conflicts
+      # RoleName: "ExternalAuditRole"  # Optional: uncomment and make unique if required
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              AWS: !Sub "arn:aws:iam::${ExternalAuditAccountId}:root"
+            Action: "sts:AssumeRole"
+      Path: "/"
+      Policies:
+        - PolicyName: "AuditPolicy"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "ec2:Describe*"
+                  - "s3:List*"
+                  - "s3:GetBucket*"
+                  - "iam:Get*"
+                  - "iam:List*"
+                  - "config:Describe*"
+                  - "cloudtrail:LookupEvents"
+                  - "cloudwatch:Get*"
+                  - "cloudwatch:List*"
+                  - "logs:Describe*"
+                  - "logs:Get*"
+                  - "rds:Describe*"
+                  - "kms:List*"
+                  - "kms:Get*"
+                Resource: "*"
+
+Outputs:
+  AuditRoleARN:
+    Description: "ARN of the IAM role to be assumed by external account"
+    Value: !GetAtt ExternalAuditRole.Arn
